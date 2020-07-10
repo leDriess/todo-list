@@ -27,9 +27,6 @@ export class TasksListsComponent implements OnInit {
   constructor(private tasksService: TasksService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    // this.todo = this.taskListService.getTasks('todo');
-    // this.inprogress = this.taskListService.getTasks('inprogress');
-    // this.done = this.taskListService.getTasks('done');
     this.tasks = this.tasksService.getAllTasks();
     this.taskTypes = Object.keys(this.tasks);
   }
@@ -50,10 +47,7 @@ export class TasksListsComponent implements OnInit {
   edit(index, type) {
     const task = this.tasksService.getTasksByType(type)[index];
     const { name, status, description, date, priority } = task;
-    // console.log(`task: ${task}`);
-    // console.log(task);
-    // console.log(`index: ${index}`);
-    // console.log(`type: ${type}`);
+
     const dialogRef = this.dialog.open(TaskDialogComponent, {
       width: '500px',
       data: {
@@ -66,8 +60,6 @@ export class TasksListsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      // console.log(`result: ${result}`);
-      // console.log(result);
       if (result) {
         const { name, status, description, date, priority } = result;
         this.tasksService.editTask(

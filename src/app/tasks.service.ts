@@ -8,17 +8,17 @@ import { Task } from './task';
 export class TasksService {
   tasks = {
     todo: [
-      new Task('Get to work', undefined, '', new Date(2020, 7, 30)),
+      new Task('Get to work', undefined, '', new Date(2020, 7, 30), 'low'),
       new Task('Pick up groceries', undefined, '', new Date(2020, 7, 25)),
       new Task('Go home', undefined, '', null),
-      new Task('Fall asleep', undefined, '', new Date(2020, 7, 3)),
+      new Task('Fall asleep', undefined, '', new Date(2020, 7, 3), 'high'),
     ],
     inprogress: [
-      new Task('Take a shower'),
-      new Task('Check e-mail'),
-      new Task('Walk dog'),
+      new Task('Take a shower', 'inprogress'),
+      new Task('Check e-mail', 'inprogress'),
+      new Task('Walk dog', 'inprogress'),
     ],
-    done: [new Task('Get up'), new Task('Brush teeth')],
+    done: [new Task('Get up', 'done'), new Task('Brush teeth', 'done')],
   };
 
   constructor() {}

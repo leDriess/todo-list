@@ -33,20 +33,11 @@ export class AppComponent {
         console.log(`result app.component`);
         console.log(result);
         const { name, status, description, date, priority } = result;
-        // const tmp = [name, status, description, date, priority];
-        // tmp.map((item) => {
-        //   console.log(item);
-        // });
-        // this.add(name, status, description, date, priority);
         this.taskService.addTask(
           new Task(name, status, description, date, priority),
           status
         );
       }
     });
-  }
-
-  show() {
-    console.log(this.taskService.getAllTasks());
   }
 }

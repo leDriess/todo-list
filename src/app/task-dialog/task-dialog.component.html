@@ -13,7 +13,7 @@
     ></textarea>
   </mat-form-field>
 
-  <mat-form-field class="">
+  <mat-form-field>
     <mat-label>Status</mat-label>
     <mat-select [(ngModel)]="taskData.status">
       <mat-option value="todo">To do</mat-option>
@@ -38,10 +38,6 @@
     <mat-datepicker touchUi #picker></mat-datepicker>
   </mat-form-field>
 </mat-dialog-content>
-
-<!-- <span *ngIf="data.name === 'New task'">&#10003;New task :D</span> -->
-<!-- <span>{{ data.name }}</span>
-<span>{{ taskData.description }}</span> -->
 
 <mat-dialog-actions>
   <button mat-button (click)="onCancel()">Cancel</button>
