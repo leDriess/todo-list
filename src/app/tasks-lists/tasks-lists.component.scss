@@ -1,0 +1,87 @@
+h2 {
+  text-align: center;
+}
+
+.list {
+  border: solid 1px #ccc;
+  min-height: 60px;
+  background: white;
+  border-radius: 4px;
+  display: block;
+  overflow: hidden;
+
+  &.done:not(.priority) {
+    text-decoration: line-through;
+  }
+}
+
+.list-item {
+  padding: 20px 10px;
+  border-bottom: solid 1px #ccc;
+  box-sizing: border-box;
+  cursor: move;
+  background: white;
+  color: black;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-item:last-child {
+  border: none;
+}
+
+.icon {
+  cursor: pointer;
+  color: #9d9d9d;
+  font-size: 1rem;
+  margin-left: 5px;
+
+  // &.priority {
+  //   cursor: inherit;
+  //   color: #f44336;
+  //   margin-right: -10px;
+  // }
+
+  &.edit:hover {
+    color: #3f51b5;
+  }
+
+  &.delete:hover {
+    color: rgb(235, 83, 83);
+    // color: #f44336;
+  }
+}
+
+.task-icon {
+  color: #cccccc;
+  margin-right: 5px;
+}
+
+.priority {
+  color: #f44336;
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
+/* Highlight the list item that is being dragged. */
+.cdk-drag-preview {
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* Animate items as they're being sorted. */
+.cdk-drop-dragging .cdk-drag {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Animate an item that has been dropped. */
+.cdk-drag-animating {
+  transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}

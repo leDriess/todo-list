@@ -1,0 +1,22 @@
+.toolbar {
+  height: 70px;
+
+  .mat-h1 {
+    margin: auto;
+    font-size: 2rem;
+  }
+}
+
+.add-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+}
+
+@media (min-width: 1200px) {
+  .add-btn {
+    position: relative;
+    float: right;
+  }
+}

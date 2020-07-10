@@ -1,0 +1,56 @@
+<h2 mat-dialog-title>Add a new task</h2>
+
+<mat-dialog-content>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Name" [(ngModel)]="taskData.name" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <textarea
+      matInput
+      placeholder="Description"
+      [(ngModel)]="taskData.description"
+    ></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="">
+    <mat-label>Status</mat-label>
+    <mat-select [(ngModel)]="taskData.status">
+      <mat-option value="todo">To do</mat-option>
+      <mat-option value="inprogress">In progress</mat-option>
+      <mat-option value="done">Done</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="inline-block">
+    <mat-label>Priority</mat-label>
+    <mat-select [(ngModel)]="taskData.priority">
+      <mat-option value="low">Low</mat-option>
+      <mat-option value="medium">Medium</mat-option>
+      <mat-option value="high">High</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Date</mat-label>
+    <input [(ngModel)]="taskData.date" matInput [matDatepicker]="picker" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker touchUi #picker></mat-datepicker>
+  </mat-form-field>
+</mat-dialog-content>
+
+<!-- <span *ngIf="data.name === 'New task'">&#10003;New task :D</span> -->
+<!-- <span>{{ data.name }}</span>
+<span>{{ taskData.description }}</span> -->
+
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button
+    [disabled]="!taskData.name"
+    mat-raised-button
+    color="primary"
+    (click)="onSave()"
+  >
+    Save
+  </button>
+</mat-dialog-actions>

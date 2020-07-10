@@ -1,0 +1,18 @@
+.full-width {
+  width: 100%;
+  // display: block;
+}
+
+.inline-block {
+  float: right;
+}
+
+.disabled {
+  color: inherit;
+}
+
+@media (max-width: 510px) {
+  .inline-block {
+    float: none;
+  }
+}
