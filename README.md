@@ -12,6 +12,7 @@ Simple to-do app with drag&drop functionality.
 ### Screenshots:
 
 ![Main view](https://i.postimg.cc/ZTtKgch4/todo-screenshot.png)
+
 ![Drag&drop](https://i.postimg.cc/k9z4K9h2/drag-drop.png)
+
 ![New task](https://i.postimg.cc/x0vTSz0H/new-task.png)
-![Mobile](https://i.postimg.cc/Pd85279S/mobile-screenshot.png)
